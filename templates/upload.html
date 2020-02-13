@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <form action = "http://localhost:5000/fileUpload" method = "POST" enctype = "multipart/form-data">
+            <input type = "file" name = "file" />
+            <input type = "submit"/>
+        </form>
+        {% if lists %}
+        <ul>
+            {% for list in range(lists.tr|length) %}
+            <img src="{{ url_for('static', filename='image/00{}.jpg'.format(list+1)) }}" style="height:150px; width:150px;">
+            <li> {{ lists.tr[list] }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+
+
+{% endblock %}
