@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import os
-import models
+import model
 app = Flask(__name__)
 
 upload_dir = os.path.join('./static/image')
@@ -17,7 +17,7 @@ def upload_file():
    if request.method == 'POST':
       f = request.files['file']
       f.save(upload_dir+'/'+secure_filename(f.filename))
-      result = models.model_play()
+      result = model.model_play()
       return render_template('upload.html', lists=result)
    return render_template('upload.html')
 
