@@ -1,158 +1,57 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.bxslider').bxSlider({
+            auto: true, // 자동으로 애니메이션 시작
+            speed: 500,  // 애니메이션 속도
+            pause: 5000,  // 애니메이션 유지 시간 (1000은 1초)
+            mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+            autoControls: true, // 시작 및 중지버튼 보여짐
+            pager: true, // 페이지 표시 보여짐
+            captions: true, // 이미지 위에 텍스트를 넣을 수 있음
+        });
+    });
+
+
+</script>
 <style>
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
-img {vertical-align: middle;}
+    * { margin: 0; padding: 0; }
+    body { font: 17px 'Nanum Gothic', sans-serif; }
+    ul { width: 700px; }
+    li { list-style: none; }
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 100%;
-  position: relative;
-  margin: auto;
-  max-height: 400px;
-}
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
 </style>
-
 {% endblock %}
 
 {% block content %}
-<div class="slideshow-container">
-
-    <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="{{url_for('static', filename='image/test_other/001.jpg')}}" style="width:100%">
-        <div class="text">Caption Text</div>
-    </div>
-
-    <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="{{url_for('static', filename='image/test_other/002.jpg')}}" style="width:100%">
-        <div class="text">Caption Two</div>
-    </div>
-
-    <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="{{url_for('static', filename='image/test_other/003.jpg')}}" style="width:100%">
-        <div class="text">Caption Three</div>
-    </div>
-
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-
-<!-- Header -->
-<header class=" bg-dark bg-dark text-center py-5 mb-4">
-    <div class="container">
-        <h1 class="font-weight-light text-white">Team A.I Gang</h1></br>
-        <p class="font-weight-light text-white" style="font-size:25px;">저희는 얼굴을 인식하여 감정을 분석하고, 그 감정에 맞는 노래를 추천해주는 웹입니다?</p>
-    </div>
-</header>
-
+<ul class="bxslider">
+    <li><a href="#"><img
+            src="http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F99C7143A5BEE75FB3092D4"
+            alt="" title="이미지1"></a></li>
+    <li><a href="#"><img
+            src="http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile10.uf.tistory.com%2Fimage%2F99C7223A5BEE75FB303A8E"
+            alt="" title="이미지2"></a></li>
+    <li><a href="#"><img
+            src="http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile7.uf.tistory.com%2Fimage%2F9982093A5BEE75FC259992"
+            alt="" title="이미지3"></a></li>
+</ul>
+<hr>
 <!-- Page Content -->
 <div class="container" style="margin-top:50px;">
     <div class="row">
         <!-- Team Member 1 -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow">
-                <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                <img src="{{ url_for('static', filename='image/team/e.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">Leader 김은민</h5>
                     <div class="card-text text-black-50"><p>모델링 분석과 최적화, 팀의 전반적 조율</p>
@@ -166,7 +65,7 @@ img {vertical-align: middle;}
                 <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">Member 강승웅</h5>
-                    <div class="card-text text-black-50"><p>PPT 제작과 요인 변수의 자료 검토,  모델 속의 적합성 검토</p>
+                    <div class="card-text text-black-50"><p>PPT 제작과 요인 변수의 자료 검토, 모델 속의 적합성 검토</p>
                     </div>
                 </div>
             </div>
@@ -174,7 +73,7 @@ img {vertical-align: middle;}
         <!-- Team Member 3 -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow">
-                <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+                <img src="{{url_for('static', filename='image/team/s.jpg')}}" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">Member 최서윤</h5>
                     <div class="card-text text-black-50"><p>자료 수집과 전 처리,시각화를 통한 모델의 구체화</p>
@@ -197,33 +96,12 @@ img {vertical-align: middle;}
     <!-- /.row -->
 
 </div>
-<!-- /.container -->
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-</script>
+<!-- footer -->
+<footer class=" bg-dark bg-dark text-center py-5 mb-4">
+    <div class="container">
+        <h1 class="font-weight-light text-white">Team A.I Gang</h1></br>
+        <p class="font-weight-light text-white" style="font-size:25px;">저희는 얼굴을 인식하여 감정을 분석하고, 그 감정에 맞는 노래를 추천해주는
+            웹입니다?</p>
+    </div>
+</footer>
 {% endblock %}
