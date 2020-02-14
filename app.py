@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import os
-import model
+import model, searchfile
 app = Flask(__name__)
 
 upload_dir = os.path.join('./static/image')
@@ -9,7 +9,8 @@ print(upload_dir)
 
 @app.route('/')
 def render_file():
-   return render_template('home.html')
+   name = searchfile.search("./static/image/team")
+   return render_template('home.html', filelist=name)
 
 
 @app.route('/fileUpload', methods = ['GET', 'POST'])
