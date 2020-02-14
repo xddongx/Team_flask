@@ -9,28 +9,15 @@
   <meta name="author" content="">
 
   <title>Bare - Start Bootstrap Template</title>
-
-  <!-- jQuery library (served from Google) -->
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
   <!-- Bootstrap core CSS -->
   <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <style>
-
-    .navbar {margin-bottom: 50px;}
-  </style>
 {% block head %}{% endblock %}
 </head>
 
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="margin-bottom:50px;">
   <div class="container">
     <a class="navbar-brand" href="/">Team A.I Gang</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +31,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/fileUpload">About</a>
+          <a class="nav-link" href="/image">Image</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Services</a>

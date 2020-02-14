@@ -13,7 +13,7 @@ def render_file():
    return render_template('home.html', filelist=name)
 
 
-@app.route('/fileUpload', methods = ['GET', 'POST'])
+@app.route('/image', methods = ['GET', 'POST'])
 def upload_file():
    if request.method == 'POST':
       f = request.files['file']
