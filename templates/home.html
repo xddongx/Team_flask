@@ -8,17 +8,21 @@
 {% block content %}
 <!-- Slider -->
 <div class="row">
-    <div class="col-4 mx-auto"></div>
-    <div class="col-4 mx-auto">
+    <div class="col"></div>
+    <div class="col-6 mx-auto">
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" >
             <div class="carousel-inner">
-                <div class="carousel-item active" data-interval="10000">
+                <div class="carousel-item active" data-interval="5000">
                     <img src="{{ url_for('static', filename='image/team/001.jpg') }}" class="mx-auto d-block w-100"
-                         alt="..." style="height:350px;text-align: center;">
+                         alt="..." style="height:400px;text-align: center;">
                 </div>
-                <div class="carousel-item" data-interval="2000">
+                <div class="carousel-item" data-interval="5000">
                     <img src="{{ url_for('static', filename='image/team/002.jpg') }}" class="mx-auto d-block w-100"
-                         alt="..." style="height:350px;text-align: center;">
+                         alt="..." style="height:400px;text-align: center;">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img src="{{ url_for('static', filename='image/team/003.jpg') }}" class="mx-auto d-block w-100"
+                         alt="..." style="height:400px;text-align: center;">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -31,7 +35,7 @@
             </a>
         </div>
     </div>
-    <div class="col-4 mx-auto"></div>
+    <div class="col"></div>
     </div>
 </div>
 

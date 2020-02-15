@@ -1,18 +1,23 @@
 {% extends 'base.html' %}
+{% block head %}
+<style>
+    table {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    tr, td {
+        border: 1px solid black;
+    }
+    .form-group {
+        padding: 60px 0px 20px 0px;
+    }
+
+
+</style>
+{% endblock %}
+
 {% block content %}
-
-
-<!--{% if lists %}-->
-<!--<ul>-->
-<!--    {% for list in range(lists.tr|length) %}-->
-<!--    <img src="{{ url_for('static', filename='image/00{}.jpg'.format(list+1)) }}"-->
-<!--         style="height:150px; width:150px;">-->
-<!--    <li> {{ lists.tr[list] }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
-<!--{% endif %}-->
-<!--</div>-->
-<!--&lt;!&ndash; /.row &ndash;&gt;-->
 
 
 <!-- /.container -->
@@ -20,27 +25,35 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-6">
-            <form action="http://localhost:5000/fileUpload" method="POST" enctype="multipart/form-data">
-                <table class="table" style="width:500px;height:900px; text-align:center">
+            <form action="/image" method="POST" enctype="multipart/form-data">
+                <div class="form-group" style="display: flex;">
+                    <input type="file" class="form-control-file" id="exampleInputFile" name="file">
+                    <button type="submit" class="btn btn-outline-primary">Upload</button>
+                </div>
+                <table class="table table-hover" style="text-align:center; border: 1px solid;">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">Before</th>
                         <th scope="col">After</th>
                     </tr>
                     </thead>
+                    {% if lists %}
                     <tbody>
                     <tr>
-                        <td><input type="file" name="file"/></td>
-                        <td>Otto</td>
+                        <td><img src="{{url_for('static', filename='image/{}'.format(name))}}"
+                                 style="height:150px; width:150px;"></td>
+                        <td><img src="{{url_for('static', filename='image/{}'.format(name))}}"
+                                 style="height:150px; width:150px;"></td>
                     </tr>
                     <tr>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
+                        <td><p>{{ lists[0] }}</p></td>
+                        <td><p>{{ lists[0] }}</p></td>
                     </tr>
 
                     </tbody>
+                    {% endif %}
                 </table>
-                <input type="submit"/>
+
             </form>
         </div>
         <div class="col"></div>

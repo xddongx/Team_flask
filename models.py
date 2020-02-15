@@ -3,7 +3,7 @@ import os, glob, numpy as np
 import keras
 from keras.models import load_model
 
-lists = {'tr': []}
+
 
 def model_play():
     test_dir = 'static/image'
@@ -33,8 +33,7 @@ def model_play():
     np.set_printoptions(formatter={'float': lambda x: '{0:0.3f}'.format(x)})
     cnt = 0
 
-
-
+    lists = []
     for i in prediction:
         pre_ans = i.argmax()  # 예측 레이블
         pre_ans_str = ''
@@ -50,21 +49,23 @@ def model_play():
 
         if i[0] >= 0.8:
             df = "해당 " + filenames[cnt].split("\\")[1] + "이미지는 " + pre_ans_str + "로 추정됩니다."
-            lists['tr'].append(df)
+            lists.append(df)
 
         if i[1] >= 0.8:
             df = "해당 " + filenames[cnt].split("\\")[1] + "이미지는 " + pre_ans_str + "으로 추정됩니다."
-            lists['tr'].append(df)
+            lists.append(df)
         if i[2] >= 0.8:
             df = "해당 " + filenames[cnt].split("\\")[1] + "이미지는 " + pre_ans_str + "로 추정됩니다."
-            lists['tr'].append(df)
+            lists.append(df)
         if i[3] >= 0.8:
             df = "해당 " + filenames[cnt].split("\\")[1] + "이미지는 " + pre_ans_str + "로 추정됩니다."
-            lists['tr'].append(df)
+            lists.append(df)
         cnt += 1
 
     lists
     return lists
+
+model_play()
 
 def search(dirname):
     filenames = os.listdir(dirname)
