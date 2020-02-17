@@ -65,14 +65,14 @@ def model_play():
     lists
     return lists
 
-model_play()
 
-def search(dirname):
-    filenames = os.listdir(dirname)
-    list = []
-    for filename in filenames:
-        full_filename = os.path.join(dirname, filename)
-        list.append(full_filename)
-    print(len(list))
-
-search("./static/image/member")
+#
+# def search(dirname):
+#     filenames = os.listdir(dirname)
+#     list = []
+#     for filename in filenames:
+#         full_filename = os.path.join(dirname, filename)
+#         list.append(full_filename)
+#     print(len(list))
+#
+# search("./static/image/member")
