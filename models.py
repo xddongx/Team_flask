@@ -26,7 +26,7 @@ def model_play():
         X.append(data)
 
     X = np.array(X)
-    model = load_model("./model/multi_img_classification.model")
+    model = load_model("./model/multi_img_classification.model", compile=False)
     print('model', model)
     prediction = model.predict(X)
     print('predict : {}'.format(prediction))
@@ -65,7 +65,7 @@ def model_play():
     lists
     return lists
 
-
+print(model_play())
 #
 # def search(dirname):
 #     filenames = os.listdir(dirname)
