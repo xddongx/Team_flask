@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
-from werkzeug.utils import secure_filename
+from werkzeug import secure_filename
 import os
 import models, searchfile
+
+
 app = Flask(__name__)
 
 upload_dir = os.path.join('./static/image')
@@ -14,14 +16,24 @@ def render_file():
 
 
 @app.route('/image', methods = ['GET', 'POST'])
-def upload_file():
+def upload_image():
    if request.method == 'POST':
       f = request.files['file']
       f.save(upload_dir+'/'+secure_filename(f.filename))
       print(f.filename)
       result = models.model_play()
-      return render_template('upload.html', lists=result, name=f.filename)
-   return render_template('upload.html')
+      return render_template('image.html', lists=result, name=f.filename)
+   return render_template('image.html')
+
+@app.route('/text', methods = ['GET', 'POST'])
+def upload_text():
+   # if request.method == 'POST':
+      # f = request.files['text']
+      # f.save(upload_dir+'/'+secure_filename(f.filename))
+      # print(f.filename)
+      # result = models.model_play()
+      # return render_template('image.html', lists=result, name=f.filename)
+   return render_template('text.html')
 
 if __name__ == '__main__':
     #서버 실행
