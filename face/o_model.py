@@ -1,9 +1,13 @@
 from PIL import Image
 import os, glob, numpy as np
-import keras
 from keras.models import load_model
-import tensorflow as tf
 from keras import backend as K
+import tensorflow as tf
+
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '0' # 초기화할 GPU number
+with tf.Graph().as_default():
+    gpu_options = tf.GPUOptions(allow_growth=True)
 
 K.clear_session()
 tf.reset_default_graph()
