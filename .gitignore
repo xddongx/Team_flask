@@ -2,4 +2,6 @@ venv/
 .idea/
 vendor/
 *.json
+_pycache_/
 *.pyc
+*.model
