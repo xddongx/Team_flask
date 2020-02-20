@@ -11,5 +11,5 @@ def search(dirname):
 
 search("./static/image/member")
 
-test = emotions.emo('무표정')
-print(test)
+# test = emotions.emo('무표정')
+# print(test)

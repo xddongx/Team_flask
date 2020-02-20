@@ -2,11 +2,14 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 
+
 music = pd.read_csv('./static/csv/music.csv', header=None)
 
 music.columns = ['emotion', 'name', 'title', 'url']
 
 emotions = music.emotion.unique()
+
+print(emotions)
 
 def emotion(e):
     if e == '불안한':
@@ -26,14 +29,18 @@ def emotion(e):
 
     emotion_ = music[music.emotion == emo]
     rand_list = emotion_.sample()
+    rand_list.emotion = e
     return rand_list
 
-text = '무표정'
+
 
 
 def emo(t):
     list = emotion(t).values[0]
     return list
+
+# list = emo('슬픈')
+# print(type(list))
 # print(list[0])
 # print(list[1])
 # print(list[2])

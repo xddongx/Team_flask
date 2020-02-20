@@ -17,6 +17,7 @@
     }
 
 
+
 </style>
 {% endblock %}
 
@@ -27,36 +28,32 @@
 <div class="container">
     <div class="row">
         <div class="col"></div>
-        <div class="col-6">
+        <div class="col-8">
             <form action="/image" method="POST" enctype="multipart/form-data">
                 <div class="form-group" style="display: flex;">
                     <input type="file" class="form-control-file" id="exampleInputFile" name="file">
                     <button type="submit" class="btn btn-outline-primary">Upload</button>
                 </div>
+                {% if lists %}
                 <table class="table table-hover" style="text-align:center; border: 1px solid;">
                     <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Before</th>
-                        <th scope="col">After</th>
+                        <th scope="col">Image</th>
                     </tr>
                     </thead>
-                    {% if lists %}
                     <tbody>
                     <tr>
-                        <td><img src="{{url_for('static', filename='image/{}'.format(name))}}"
-                                 style="height:150px; width:150px;"></td>
-                        <td><img src="{{url_for('static', filename='image/{}'.format(name))}}"
-                                 style="height:150px; width:150px;"></td>
+                        <td><img src="{{url_for('static', filename='image/face/{}'.format(name))}}"
+                                 style="height:400px; width:400px;"></td>
                     </tr>
                     <tr>
-                        <td><p>{{ lists[0] }}</p></td>
-                        <td><p>{{ lists[0] }}</p></td>
+                        <td><p>{{ lists[0]}}</p></td>
                     </tr>
-
                     </tbody>
-                    {% endif %}
-                </table>
 
+                </table>
+                <h3 style="text-align:center;">{{emotion[1]}}_{{emotion[2]}}<br> <a href="{{emotion[3]}}">{{emotion[3]}}</a></h3>
+                {% endif %}
             </form>
         </div>
         <div class="col"></div>

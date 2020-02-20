@@ -7,14 +7,19 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-6">
-        <form>
+        <form method="post" action="/text">
             <div class="form-group">
                 <label for="exampleTextarea">Text area</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3" name="text"></textarea>
+                <textarea class="form-control" id="exampleTextarea" rows="3" name="text_data"></textarea>
             </div>
                 <button type="submit" class="btn btn-outline-primary" style="float:right;">submit</button>
         </form>
+            {% if texts %}
+        <br><br><h2><i>{{texts[0]}}</i></h2><br>
+            <h3 style="text-align:center;">{{emotion[1]}}_{{emotion[2]}}<br> <a href="{{emotion[3]}}">{{emotion[3]}}</a></h3>
+            {% endif %}
         </div>
+
         <div class="col"></div>
     </div>
 </div>
