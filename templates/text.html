@@ -21,7 +21,9 @@
             <br><br>
             {% if texts %}
                 <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{texts[0]}}</p><br>
-                <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{emotion[1]}}_{{emotion[2]}}<br> <a href="{{emotion[3]}}">{{emotion[3]}}</a></p>
+                <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{emotion[1]}}_{{emotion[2]}}<br><br>
+
+                    <a href="{{emotion[3]}}"><img src="{{url_for('static', filename='image/member/button.jpg')}}" style="width:50px;">  {{emotion[3]}}</a></p>
             {% endif %}
         </div>
 

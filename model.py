@@ -5,7 +5,7 @@ from keras import backend as K
 import tensorflow as tf
 
 
-def model_play(face_image):
+def model_play(face_image=None):
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'  # 초기화할 GPU number
     with tf.Graph().as_default():
         gpu_options = tf.GPUOptions(allow_growth=True)

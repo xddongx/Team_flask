@@ -14,7 +14,7 @@ tf.reset_default_graph()
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0' # 초기화할 GPU number
 
-def model_text(feel):
+def model_text(feel=None):
 
     with tf.Graph().as_default():
         gpu_options = tf.GPUOptions(allow_growth=True)
@@ -155,6 +155,6 @@ def model_text(feel):
 
 
 
-feel = '행복하다'
-#
-print(model_text(feel))
+# feel = '행복하다'
+# #
+# print(model_text(feel))
