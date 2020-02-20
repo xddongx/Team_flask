@@ -10,13 +10,18 @@
         <form method="post" action="/text">
             <div class="form-group">
                 <label for="exampleTextarea">Text area</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3" name="text_data"></textarea>
+                {% if texts %}
+                    <textarea class="form-control"  rows="3" name="text_data">{{feel}}</textarea>
+                {% else %}
+                    <textarea class="form-control" id="exampleTextarea" rows="3" name="text_data"></textarea>
+                {% endif %}
             </div>
                 <button type="submit" class="btn btn-outline-primary" style="float:right;">submit</button>
         </form>
+            <br><br>
             {% if texts %}
-        <br><br><h2><i>{{texts[0]}}</i></h2><br>
-            <h3 style="text-align:center;">{{emotion[1]}}_{{emotion[2]}}<br> <a href="{{emotion[3]}}">{{emotion[3]}}</a></h3>
+                <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{texts[0]}}</p><br>
+                <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{emotion[1]}}_{{emotion[2]}}<br> <a href="{{emotion[3]}}">{{emotion[3]}}</a></p>
             {% endif %}
         </div>
 

@@ -21,7 +21,7 @@ def upload_image():
       f = request.files['file']
       f.save(face_dir+'/'+secure_filename(f.filename))
       print(f.filename)
-      result = model.model_play()
+      result = model.model_play(f.filename)
       mind = emotions.emo(result[1])
       print(mind)
       return render_template('image.html', lists=result, name=f.filename, emotion = mind)
@@ -37,7 +37,7 @@ def upload_text():
       print(result)
       mind = emotions.emo(result[1])
       print(mind)
-      return render_template('text.html', texts=result, emotion=mind)
+      return render_template('text.html', texts=result, emotion=mind, feel=feel)
    return render_template('text.html')
 
 if __name__ == '__main__':

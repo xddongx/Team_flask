@@ -15,7 +15,7 @@ tf.reset_default_graph()
 os.environ['CUDA_VISIBLE_DEVICES'] = '0' # 초기화할 GPU number
 
 def model_text(feel):
-    text_lists = []
+
     with tf.Graph().as_default():
         gpu_options = tf.GPUOptions(allow_growth=True)
 
@@ -119,7 +119,7 @@ def model_text(feel):
     # https://codepractice.tistory.com/71
 
     def Delete(predict):
-
+        text_lists = []
         predict = predict.reshape(-1).astype('int')
         predict = np.around(predict)
         from collections import Counter  # 최빈값구하려고 부르는 매소드
@@ -155,6 +155,6 @@ def model_text(feel):
 
 
 
-# feel = '아침엔 악몽을 꾸어서 짜증났지만 오늘 문제도 잘 풀리고 컨디션이 좋아져서 상쾌한 오전이다.'
+feel = '행복하다'
 #
-# print(model_text(feel))
+print(model_text(feel))

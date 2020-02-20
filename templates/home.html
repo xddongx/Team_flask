@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
-
+<style>
+    .card-title {
+        font-size:25px;
+        margin-bottom:5px;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -10,7 +14,7 @@
 <div class="row" style="margin-top:25px; margin-bottom:10px;">
     <div class="col"></div>
     <div class="col-6 mx-auto">
-        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" >
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="5000">
                     <img src="{{ url_for('static', filename='image/team/001.jpg') }}" class="mx-auto d-block w-100"
@@ -22,6 +26,10 @@
                 </div>
                 <div class="carousel-item" data-interval="5000">
                     <img src="{{ url_for('static', filename='image/team/003.jpg') }}" class="mx-auto d-block w-100"
+                         alt="..." style="height:400px;text-align: center;">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img src="{{ url_for('static', filename='image/team/004.jpg') }}" class="mx-auto d-block w-100"
                          alt="..." style="height:400px;text-align: center;">
                 </div>
             </div>
@@ -36,7 +44,7 @@
         </div>
     </div>
     <div class="col"></div>
-    </div>
+</div>
 </div>
 
 <!-- Slider -->
@@ -49,7 +57,7 @@
             <div class="card border-0 shadow">
                 <img src="{{ url_for('static', filename='image/member/e.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Leader 김은민</h5>
+                    <p class="card-title mb-0">Leader 김은민</p>
 
                     <div class="card-text text-black-50"><p>모델링 분석과 최적화, 팀의 전반적 조율</p>
                     </div>
@@ -59,9 +67,9 @@
         <!-- Team Member 2 -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow">
-                <img src="{{ url_for('static', filename='image/member/g.jpg') }}" class="card-img-top" alt="..." >
+                <img src="{{ url_for('static', filename='image/member/g.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Member 강승웅</h5>
+                    <p class="card-title mb-0">Member 강승웅</p>
                     <div class="card-text text-black-50"><p>PPT 제작과 요인 변수의 자료 검토, 모델 속의 적합성 검토</p>
                     </div>
                 </div>
@@ -72,7 +80,7 @@
             <div class="card border-0 shadow">
                 <img src="{{url_for('static', filename='image/member/s.jpg')}}" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Member 최서윤</h5>
+                    <p class="card-title mb-0">Member 최서윤</p>
                     <div class="card-text text-black-50"><p>자료 수집과 전 처리,시각화를 통한 모델의 구체화</p>
                     </div>
                 </div>
@@ -83,7 +91,7 @@
             <div class="card border-0 shadow">
                 <img src="{{url_for('static', filename='image/member/d.jpg')}}" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Member 김동현</h5>
+                    <p class="card-title mb-0">Member 김동현</p>
                     <div class="card-text text-black-50"><p>Web 크롤링과 연관분석 담당, 모델 최적화
                     </p></div>
                 </div>

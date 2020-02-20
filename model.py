@@ -5,7 +5,7 @@ from keras import backend as K
 import tensorflow as tf
 
 
-def model_play():
+def model_play(face_image):
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'  # 초기화할 GPU number
     with tf.Graph().as_default():
         gpu_options = tf.GPUOptions(allow_growth=True)
@@ -13,14 +13,14 @@ def model_play():
     K.clear_session()
     tf.reset_default_graph()
 
-    # test_dir = 'static/image/face'
-    test_dir = './face/image'
+    test_dir = 'static/image/face'
+    # test_dir = './face/image'
     image_w =128
     image_h =128
 
     X = []
     filenames =[]
-    files = glob.glob(test_dir+ '/' + '*.*')
+    files = glob.glob(test_dir+ '/' + '{}'.format(face_image))
 
     for i, f in enumerate(files):
         img = Image.open(f)
@@ -35,7 +35,7 @@ def model_play():
 
     X = np.array(X)
 
-    model_dir = os.path.join('model/vgg16avg.model')
+    model_dir = os.path.join('model/vgg16max_16.model')
 
     print(model_dir)
     model = load_model(model_dir, compile=False)
@@ -47,9 +47,10 @@ def model_play():
 
     np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)})  # >> 넘파이 출력옵션 변경하는것! (소수점3자리까지)
     cnt = 0
-    lists = []
+
 
     for i in prediction:
+        lists = []
         pre_ans = i.argmax()  # 예측 레이블  # argmax : 함수를 최대로 만들기 위한 x 값 --> 즉 첫번째에서는 3번째만 1이므로 2가 출력됨
         print(i)
         print(pre_ans)
@@ -100,4 +101,5 @@ def model_play():
 
     return lists
 
-print(model_play())
+# t = '1.jpg'
+# print(model_play(t))
