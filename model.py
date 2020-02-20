@@ -13,7 +13,8 @@ def model_play():
     K.clear_session()
     tf.reset_default_graph()
 
-    test_dir = 'static/image/face'
+    # test_dir = 'static/image/face'
+    test_dir = './face/image'
     image_w =128
     image_h =128
 
@@ -34,7 +35,7 @@ def model_play():
 
     X = np.array(X)
 
-    model_dir = os.path.join('model/vgg16max_16.model')
+    model_dir = os.path.join('model/vgg16avg.model')
 
     print(model_dir)
     model = load_model(model_dir, compile=False)
@@ -99,4 +100,4 @@ def model_play():
 
     return lists
 
-# print(model_play())
+print(model_play())
